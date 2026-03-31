@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@theme {
+  --font-headline: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-background: #0b0e14;
+  --color-surface: #161a21;
+  --color-surface-high: #1c2028;
+  --color-surface-bright: #282c36;
+  --color-surface-variant: #22262f;
+  --color-surface-lowest: #000000;
+  
+  --color-primary: #f3ffca;
+  --color-primary-dim: #beee00;
+  --color-primary-container: #cafd00;
+  
+  --color-secondary: #ff706e;
+  --color-secondary-container: #91081a;
+  
+  --color-tertiary: #8ff5ff;
+  --color-tertiary-container: #00eefc;
+
+  --color-on-surface: #ecedf6;
+  --color-on-surface-variant: #a9abb3;
+  --color-outline: #73757d;
+  --color-outline-variant: #45484f;
+}
+
+.light {
+  --color-background: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-surface-high: #f1f3f5;
+  --color-surface-bright: #e9ecef;
+  --color-surface-variant: #dee2e6;
+  --color-surface-lowest: #f8f9fa;
+  
+  --color-primary: #5c7cfa;
+  --color-primary-dim: #4263eb;
+  --color-primary-container: #364fc7;
+  
+  --color-secondary: #fa5252;
+  --color-secondary-container: #e03131;
+  
+  --color-tertiary: #15aabf;
+  --color-tertiary-container: #0c8599;
+
+  --color-on-surface: #212529;
+  --color-on-surface-variant: #495057;
+  --color-outline: #adb5bd;
+  --color-outline-variant: #ced4da;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-body antialiased selection:bg-primary selection:text-black;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-surface-variant/40 backdrop-blur-[30px] border-t border-white/10;
+  }
+  
+  .neon-glow-primary {
+    @apply shadow-[0_0_20px_rgba(243,255,202,0.3)];
+  }
+  
+  .neon-glow-secondary {
+    @apply shadow-[0_0_15px_rgba(255,112,110,0.3)];
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
